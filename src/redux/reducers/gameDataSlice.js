@@ -7,12 +7,16 @@ export const gameDataSlice = createSlice({
       [0, 0, 0, 0],
       [0, 0, 0, 0],
       [0, 0, 0, 0],
-      [0, 0, 0, 0]
+      [0, 0, 0, 0],
     ],
   },
   reducers: {
-
-  }
+    initializeState(state, action) {
+      state.cells = action.payload
+    },
+  },
 });
 
-export default gameDataSlice.reducer
+export const { initializeState } = gameDataSlice.actions;
+
+export default gameDataSlice.reducer;

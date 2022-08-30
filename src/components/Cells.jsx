@@ -12,11 +12,11 @@ const Cells = () => {
         width: "max-content",
         margin: "auto",
         padding: "0.5rem",
-        borderRadius: "1rem"
+        borderRadius: "1rem",
       }}
     >
       {data.map((row, rowIndex) => (
-        <Box key={rowIndex} sx={{ display: "flex"}}>
+        <Box key={rowIndex} sx={{ display: "flex" }}>
           {row.map((digit, digitIndex) => (
             <Block number={digit} key={digitIndex} />
           ))}
