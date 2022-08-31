@@ -20,7 +20,7 @@ function App() {
   const DOWN_ARROW = 40;
   const LEFT_ARROW = 37;
   const RIGHT_ARROW = 39;
-  const handleKeyDown = (event) => {
+  const handleKeyPress = (event) => {
     switch (event.keyCode) {
       case UP_ARROW:
         dispatch(updateState(swipeUp(data)));
@@ -40,15 +40,18 @@ function App() {
   };
 
   useEffect(() => {
+    // fix double useEffect
     if (executedRef.current) {
       return;
     } else {
+      // initialize 2 numbers for 2 random cells
       executedRef.current = true;
       dispatch(updateState(initialize(data)));
     }
   }, []);
 
-  useEvent("keydown", () => handleKeyDown(event, data));
+  // event listener on arrow key press
+  useEvent("keydown", () => handleKeyPress(event, data));
 
   return (
     <Container maxWidth='sm' className='App'>
