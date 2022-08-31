@@ -3,7 +3,7 @@ import React from "react";
 import { useSelector } from "react-redux";
 import Block from "./Block";
 
-const Cells = () => {
+const Grid = () => {
   const data = useSelector((state) => state.gameData.cells);
   return (
     <Box
@@ -26,4 +26,4 @@ const Cells = () => {
   );
 };
 
-export default Cells;
+export default Grid;

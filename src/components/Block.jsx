@@ -1,21 +1,21 @@
 import { Box } from "@mui/material";
 import React from "react";
-import { getColor } from "../hooks/useEvent";
+import { getColor } from "../helpers/getColor";
 
 const Block = ({ number }) => {
   const style = {
     blockStyle: {
-      height: "100px",
-      width: "100px",
-      background: "#C2B3A3",
+      height: "95px",
+      width: "95px",
+      background: "#cdc1b4",
       margin: "0.4rem",
       display: "flex",
       justifyContent: "center",
       alignItems: "center",
       fontSize: "45px",
-      fontWeight: "500",
+      fontWeight: "bold",
       overflow: "hidden",
-      color: "#645B52",
+      color: "#776e65",
     },
   };
   const { blockStyle } = style;
@@ -24,7 +24,7 @@ const Block = ({ number }) => {
       sx={{
         ...blockStyle,
         background: getColor(number),
-        color: number === 2 || number === 4 ? "#645B52" : "white",
+        color: number === 2 || number === 4 ? "#776e65" : "white",
       }}
     >
       {number !== 0 ? number : ""}

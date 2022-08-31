@@ -1,7 +1,7 @@
 import "./App.css";
 import { Box, Container } from "@mui/material";
 import { useDispatch, useSelector } from "react-redux";
-import Cells from "./components/Cells";
+import Grid from "./components/Grid";
 import { useEffect, useRef } from "react";
 import { initialize } from "./helpers/initialize";
 import { updateState } from "./redux/reducers/gameDataSlice";
@@ -39,23 +39,21 @@ function App() {
     }
   };
 
+  // fix double useEffect call and initialize 2 numbers for 2 random blocks
   useEffect(() => {
-    // fix double useEffect
     if (executedRef.current) {
       return;
     } else {
-      // initialize 2 numbers for 2 random cells
       executedRef.current = true;
       dispatch(updateState(initialize(data)));
     }
   }, []);
-
   // event listener on arrow key press
   useEvent("keydown", () => handleKeyPress(event, data));
 
   return (
     <Container maxWidth='sm' className='App'>
-      <Cells />
+      <Grid />
     </Container>
   );
 }

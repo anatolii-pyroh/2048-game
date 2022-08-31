@@ -1,5 +1,7 @@
+@import url(https://uk.allfont.net/allfont.css?fonts=clear-sans);
+
 body {
-  font-family: "Roboto", "Arial" !important;
+  font-family: "Clear Sans", arial;
 }
 
 .App {
