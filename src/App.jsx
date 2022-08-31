@@ -2,16 +2,22 @@ import "./App.css";
 import { Box, Container } from "@mui/material";
 import { useDispatch, useSelector } from "react-redux";
 import Cells from "./components/Cells";
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import { initialize } from "./helpers/initialize";
 import { initializeState } from "./redux/reducers/gameDataSlice";
 
 function App() {
+  const executedRef = useRef(false);
   const data = useSelector((state) => state.gameData.cells);
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(initializeState(initialize(data)));
+    if (executedRef.current) {
+      return;
+    } else {
+      dispatch(initializeState(initialize(data)));
+      executedRef.current = true;
+    }
   }, []);
 
   return (

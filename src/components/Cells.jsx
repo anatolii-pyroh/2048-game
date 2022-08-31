@@ -11,7 +11,7 @@ const Cells = () => {
         backgroundColor: "#AD9D8F",
         width: "max-content",
         margin: "auto",
-        padding: "0.5rem",
+        padding: "0.4rem",
         borderRadius: "1rem",
       }}
     >

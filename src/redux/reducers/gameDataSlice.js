@@ -12,7 +12,7 @@ export const gameDataSlice = createSlice({
   },
   reducers: {
     initializeState(state, action) {
-      state.cells = action.payload
+      state.cells = action.payload;
     },
   },
 });
