@@ -1,3 +1,6 @@
+import cloneDeep from "lodash.clonedeep";
+import { addNumber } from "./addNumber";
+
 export const swipeUp = (data, gameOver) => {
   console.log("swipe up");
   let oldArray = JSON.parse(JSON.stringify(data));
@@ -39,6 +42,6 @@ export const swipeUp = (data, gameOver) => {
   if (gameOver) {
     return newArray;
   } else {
-    setData(newArray);
+    return newArray;
   }
 };
