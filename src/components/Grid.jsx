@@ -4,7 +4,7 @@ import { useSelector } from "react-redux";
 import Block from "./Block";
 
 const Grid = () => {
-  const data = useSelector((state) => state.gameData.cells);
+  const data = useSelector((state) => state.gameData.grid);
   return (
     <Box
       sx={{

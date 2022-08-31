@@ -2,7 +2,7 @@ import cloneDeep from "lodash.clonedeep";
 import { addNumber } from "./addNumber";
 
 export const swipeUp = (data, noOptionsToSwipe) => {
-  console.log("swipe up");
+  // console.log("swipe up");
   let oldArray = JSON.parse(JSON.stringify(data));
   let newArray = cloneDeep(data);
 
@@ -36,20 +36,18 @@ export const swipeUp = (data, noOptionsToSwipe) => {
       }
     }
   }
-  if (JSON.stringify(oldArray) !== JSON.stringify(newArray)) {
+  if (JSON.stringify(newArray) !== JSON.stringify(oldArray)) {
     addNumber(newArray);
-  } else {
-    console.log("didnt add new numbers because blocks didnt change")
-  }
+  } 
   if (noOptionsToSwipe) {
-    return oldArray;
+    return newArray;
   } else {
     return newArray;
   }
 };
 
 export const swipeRight = (data, noOptionsToSwipe) => {
-  console.log("swipe right");
+  // console.log("swipe right");
   let oldArray = data;
   let newArray = cloneDeep(data);
 
@@ -87,18 +85,16 @@ export const swipeRight = (data, noOptionsToSwipe) => {
 
   if (JSON.stringify(newArray) !== JSON.stringify(oldArray)) {
     addNumber(newArray);
-  } else {
-    console.log("didnt add new numbers because blocks didnt change")
-  }
+  } 
   if (noOptionsToSwipe) {
-    return oldArray;
+    return newArray;
   } else {
     return newArray;
   }
 };
 
 export const swipeDown = (data, noOptionsToSwipe) => {
-  console.log("swipe down");
+  // console.log("swipe down");
   let oldArray = JSON.parse(JSON.stringify(data));
   let newArray = cloneDeep(data);
 
@@ -135,18 +131,16 @@ export const swipeDown = (data, noOptionsToSwipe) => {
   //  if swipe pressed and blocks moved, add numbers
   if (JSON.stringify(newArray) !== JSON.stringify(oldArray)) {
     addNumber(newArray);
-  } else {
-    console.log("didnt add new numbers because blocks didnt change")
-  }
+  } 
   if (noOptionsToSwipe) {
-    return oldArray;
+    return newArray;
   } else {
     return newArray;
   }
 };
 
 export const swipeLeft = (data, noOptionsToSwipe) => {
-  console.log("swipe left");
+  // console.log("swipe left");
   let oldArray = data;
   let newArray = cloneDeep(data);
 
@@ -184,11 +178,9 @@ export const swipeLeft = (data, noOptionsToSwipe) => {
 
   if (JSON.stringify(newArray) !== JSON.stringify(oldArray)) {
     addNumber(newArray);
-  } else {
-    console.log("didnt add new numbers because blocks didnt change")
-  }
+  } 
   if (noOptionsToSwipe) {
-    return oldArray;
+    return newArray;
   } else {
     return newArray;
   }

@@ -4,12 +4,14 @@ import { useDispatch, useSelector } from "react-redux";
 import Grid from "./components/Grid";
 import { useEffect, useRef } from "react";
 import { initialize } from "./helpers/initialize";
-import { updateState } from "./redux/reducers/gameDataSlice";
+import { updateGrid, updateIsGameOver } from "./redux/reducers/gameDataSlice";
 import { useEvent } from "./hooks/useEvent";
 import { swipeUp, swipeDown, swipeLeft, swipeRight } from "./helpers/swipes";
+import { isGameOver } from "./helpers/isGameOver";
 
 function App() {
-  const data = useSelector((state) => state.gameData.cells);
+  const data = useSelector((state) => state.gameData.grid);
+  const gameOver = useSelector((state) => state.gameData.isGameOver)
   const executedRef = useRef(false);
   const dispatch = useDispatch();
 
@@ -18,21 +20,31 @@ function App() {
   const LEFT_ARROW = 37;
   const RIGHT_ARROW = 39;
   const handleKeyPress = (event) => {
+    if(gameOver) {
+      return;
+    }
     switch (event.keyCode) {
       case UP_ARROW:
-        dispatch(updateState(swipeUp(data)));
+        dispatch(updateGrid(swipeUp(data)));
         break;
       case DOWN_ARROW:
-        dispatch(updateState(swipeDown(data)));
+        dispatch(updateGrid(swipeDown(data)));
         break;
       case LEFT_ARROW:
-        dispatch(updateState(swipeLeft(data)));
+        dispatch(updateGrid(swipeLeft(data)));
         break;
       case RIGHT_ARROW:
-        dispatch(updateState(swipeRight(data)));
+        dispatch(updateGrid(swipeRight(data)));
         break;
       default:
         break;
+    }
+
+    let gameOverr = isGameOver(data)
+    console.log(isGameOver(data))
+    if(gameOverr) {
+      alert("game over")
+      dispatch(updateIsGameOver(true))
     }
   };
 
@@ -42,7 +54,7 @@ function App() {
       return;
     } else {
       executedRef.current = true;
-      dispatch(updateState(initialize(data)));
+      dispatch(updateGrid(initialize(data)));
     }
   }, []);
   // event listener on arrow key press

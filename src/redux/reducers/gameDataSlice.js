@@ -3,20 +3,24 @@ import { createSlice } from "@reduxjs/toolkit";
 export const gameDataSlice = createSlice({
   name: "gameData",
   initialState: {
-    cells: [
+    grid: [
       [0, 0, 0, 0],
       [0, 0, 0, 0],
       [0, 0, 0, 0],
       [0, 0, 0, 0],
     ],
+    isGameOver: false,
   },
   reducers: {
-    updateState(state, action) {
-      state.cells = action.payload;
+    updateGrid(state, action) {
+      state.grid = action.payload;
+    },
+    updateIsGameOver(state, action) {
+      state.isGameOver = action.payload;
     },
   },
 });
 
-export const { updateState } = gameDataSlice.actions;
+export const { updateGrid, updateIsGameOver } = gameDataSlice.actions;
 
 export default gameDataSlice.reducer;
