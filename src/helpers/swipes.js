@@ -38,7 +38,7 @@ export const swipeUp = (data, noOptionsToSwipe) => {
   }
   if (JSON.stringify(newArray) !== JSON.stringify(oldArray)) {
     addNumber(newArray);
-  } 
+  }
   if (noOptionsToSwipe) {
     return newArray;
   } else {
@@ -85,7 +85,7 @@ export const swipeRight = (data, noOptionsToSwipe) => {
 
   if (JSON.stringify(newArray) !== JSON.stringify(oldArray)) {
     addNumber(newArray);
-  } 
+  }
   if (noOptionsToSwipe) {
     return newArray;
   } else {
@@ -131,7 +131,7 @@ export const swipeDown = (data, noOptionsToSwipe) => {
   //  if swipe pressed and blocks moved, add numbers
   if (JSON.stringify(newArray) !== JSON.stringify(oldArray)) {
     addNumber(newArray);
-  } 
+  }
   if (noOptionsToSwipe) {
     return newArray;
   } else {
@@ -178,7 +178,7 @@ export const swipeLeft = (data, noOptionsToSwipe) => {
 
   if (JSON.stringify(newArray) !== JSON.stringify(oldArray)) {
     addNumber(newArray);
-  } 
+  }
   if (noOptionsToSwipe) {
     return newArray;
   } else {

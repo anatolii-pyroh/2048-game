@@ -7,11 +7,12 @@ import { initialize } from "./helpers/initialize";
 import { updateGrid, updateIsGameOver } from "./redux/reducers/gameDataSlice";
 import { useEvent } from "./hooks/useEvent";
 import { swipeUp, swipeDown, swipeLeft, swipeRight } from "./helpers/swipes";
-import { isGameOver } from "./helpers/isGameOver";
+import { checkIsGameOver } from "./helpers/isGameOver";
+import ResetButton from "./components/ResetButton";
 
 function App() {
   const data = useSelector((state) => state.gameData.grid);
-  const gameOver = useSelector((state) => state.gameData.isGameOver)
+  const gameOver = useSelector((state) => state.gameData.isGameOver);
   const executedRef = useRef(false);
   const dispatch = useDispatch();
 
@@ -20,7 +21,7 @@ function App() {
   const LEFT_ARROW = 37;
   const RIGHT_ARROW = 39;
   const handleKeyPress = (event) => {
-    if(gameOver) {
+    if (gameOver) {
       return;
     }
     switch (event.keyCode) {
@@ -39,12 +40,12 @@ function App() {
       default:
         break;
     }
-
-    let gameOverr = isGameOver(data)
-    console.log(isGameOver(data))
-    if(gameOverr) {
-      alert("game over")
-      dispatch(updateIsGameOver(true))
+    // check if possible to continue swiping
+    // if not, set gameOver to true
+    let gameOverr = checkIsGameOver(data);
+    console.log(checkIsGameOver(data));
+    if (gameOverr) {
+      dispatch(updateIsGameOver(true));
     }
   };
 
@@ -62,6 +63,7 @@ function App() {
 
   return (
     <Container maxWidth='sm' className='App'>
+      <ResetButton />
       <Grid />
     </Container>
   );

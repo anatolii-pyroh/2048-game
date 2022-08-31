@@ -1,10 +1,11 @@
 import { swipeDown, swipeLeft, swipeRight, swipeUp } from "./swipes";
 
 // Check Gameover
-export const isGameOver = (newArray) => {
+export const checkIsGameOver = (newArray) => {
   // console.log("Checking if game is over");
 
   let checker = swipeUp(newArray, true);
+  // console.log("Checker up")
   if (JSON.stringify(newArray) !== JSON.stringify(checker)) {
     return false;
   }
