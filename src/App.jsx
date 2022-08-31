@@ -13,8 +13,8 @@ import { swipeRight } from "./helpers/swipeRight";
 
 function App() {
   const data = useSelector((state) => state.gameData.cells);
-  const dispatch = useDispatch();
   const executedRef = useRef(false);
+  const dispatch = useDispatch();
 
   const UP_ARROW = 38;
   const DOWN_ARROW = 40;
@@ -23,16 +23,16 @@ function App() {
   const handleKeyDown = (event) => {
     switch (event.keyCode) {
       case UP_ARROW:
-        dispatch(updateState(swipeUp(data, false)));
+        dispatch(updateState(swipeUp(data)));
         break;
       case DOWN_ARROW:
-        dispatch(updateState(swipeDown(data, false)));
+        dispatch(updateState(swipeDown(data)));
         break;
       case LEFT_ARROW:
-        dispatch(updateState(swipeLeft(data, false)));
+        dispatch(updateState(swipeLeft(data)));
         break;
       case RIGHT_ARROW:
-        dispatch(updateState(swipeRight(data, false)));
+        dispatch(updateState(swipeRight(data)));
         break;
       default:
         break;

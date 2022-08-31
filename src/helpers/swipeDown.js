@@ -3,7 +3,6 @@ import { addNumber } from "./addNumber";
 
 export const swipeDown = (data, gameOver) => {
   console.log("swipe down");
-  console.log(data);
   let oldArray = JSON.parse(JSON.stringify(data));
   let newArray = cloneDeep(data);
 
