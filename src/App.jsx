@@ -6,10 +6,7 @@ import { useEffect, useRef } from "react";
 import { initialize } from "./helpers/initialize";
 import { updateState } from "./redux/reducers/gameDataSlice";
 import { useEvent } from "./hooks/useEvent";
-import { swipeUp } from "./helpers/swipeUp";
-import { swipeDown } from "./helpers/swipeDown";
-import { swipeLeft } from "./helpers/swipeLeft";
-import { swipeRight } from "./helpers/swipeRight";
+import { swipeUp, swipeDown, swipeLeft, swipeRight } from "./helpers/swipes";
 
 function App() {
   const data = useSelector((state) => state.gameData.cells);
