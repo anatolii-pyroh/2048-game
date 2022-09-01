@@ -71,11 +71,15 @@ function App() {
         sx={{
           display: "flex",
           justifyContent: "center",
+          flexDirection: "column",
           alignItems: "center",
         }}
       >
         <h1>2048</h1>
-        <ResetButton />
+        <Box>
+          <ResetButton />
+          Score:
+        </Box>
       </Box>
       <Grid />
       <p>

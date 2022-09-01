@@ -1,7 +1,7 @@
 import cloneDeep from "lodash.clonedeep";
 import { addNumber } from "./addNumber";
 
-export const swipeUp = (data, noOptionsToSwipe) => {
+export const swipeUp = (data) => {
   // console.log("swipe up");
   let oldArray = JSON.parse(JSON.stringify(data));
   let newArray = cloneDeep(data);
@@ -42,7 +42,7 @@ export const swipeUp = (data, noOptionsToSwipe) => {
   return newArray;
 };
 
-export const swipeRight = (data, noOptionsToSwipe) => {
+export const swipeRight = (data) => {
   // console.log("swipe right");
   let oldArray = data;
   let newArray = cloneDeep(data);
@@ -85,7 +85,7 @@ export const swipeRight = (data, noOptionsToSwipe) => {
   return newArray;
 };
 
-export const swipeDown = (data, noOptionsToSwipe) => {
+export const swipeDown = (data) => {
   // console.log("swipe down");
   let oldArray = JSON.parse(JSON.stringify(data));
   let newArray = cloneDeep(data);
@@ -127,7 +127,7 @@ export const swipeDown = (data, noOptionsToSwipe) => {
   return newArray;
 };
 
-export const swipeLeft = (data, noOptionsToSwipe) => {
+export const swipeLeft = (data) => {
   // console.log("swipe left");
   let oldArray = data;
   let newArray = cloneDeep(data);
