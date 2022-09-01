@@ -59,7 +59,7 @@ function App() {
     }
   }, []);
   // event listener on arrow key press
-  useEvent("keydown", () => handleKeyPress(event, data));
+  useEvent("keydown", handleKeyPress);
 
   return (
     <Container maxWidth='sm' className='App'>

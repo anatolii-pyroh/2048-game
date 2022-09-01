@@ -1,16 +1,17 @@
 import { Button } from "@mui/material";
 import React from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { reset } from "../helpers/reset";
 import { updateGrid, updateIsGameOver } from "../redux/reducers/gameDataSlice";
 
 const ResetButton = () => {
-  const data = useSelector((state) => state.gameData.grid);
   const dispatch = useDispatch();
+
   const resetGrid = () => {
-    dispatch(updateGrid(reset(data)));
-    dispatch(updateIsGameOver(false))
+    dispatch(updateGrid(reset()));
+    dispatch(updateIsGameOver(false));
   };
+  
   return (
     <Button
       onClick={resetGrid}

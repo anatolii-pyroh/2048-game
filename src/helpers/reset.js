@@ -1,6 +1,6 @@
 import { addNumber } from "./addNumber";
 
-export const reset = (data) => {
+export const reset = () => {
   let resetData = [
     [0, 0, 0, 0],
     [0, 0, 0, 0],

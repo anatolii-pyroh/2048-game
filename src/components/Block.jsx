@@ -15,10 +15,10 @@ const Block = ({ number }) => {
       fontSize: "45px",
       fontWeight: "bold",
       overflow: "hidden",
-      color: "#776e65",
     },
   };
   const { blockStyle } = style;
+  
   return (
     <Box
       sx={{

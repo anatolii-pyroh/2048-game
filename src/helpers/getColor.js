@@ -1,5 +1,4 @@
 // change color of block bacgkround
-
 export const getColor = (number) => {
     switch (number) {
       case 2:
