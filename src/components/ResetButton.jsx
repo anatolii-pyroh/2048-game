@@ -1,5 +1,5 @@
-import { Button } from "@mui/material";
 import React from "react";
+import { Button } from "@mui/material";
 import { useDispatch } from "react-redux";
 import { reset } from "../helpers/reset";
 import { updateGrid, updateIsGameOver } from "../redux/reducers/gameDataSlice";
@@ -20,8 +20,7 @@ const ResetButton = () => {
         background: "#846f5b",
         color: "#f8f5f0",
         width: "8rem",
-        margin: "auto",
-        marginBottom: "1rem",
+        margin: "1rem",
         borderRadius: "0.5rem",
         fontWeight: "bold",
         "&:hover": {

@@ -39,11 +39,7 @@ export const swipeUp = (data, noOptionsToSwipe) => {
   if (JSON.stringify(newArray) !== JSON.stringify(oldArray)) {
     addNumber(newArray);
   }
-  if (noOptionsToSwipe) {
-    return newArray;
-  } else {
-    return newArray;
-  }
+  return newArray;
 };
 
 export const swipeRight = (data, noOptionsToSwipe) => {
@@ -86,11 +82,7 @@ export const swipeRight = (data, noOptionsToSwipe) => {
   if (JSON.stringify(newArray) !== JSON.stringify(oldArray)) {
     addNumber(newArray);
   }
-  if (noOptionsToSwipe) {
-    return newArray;
-  } else {
-    return newArray;
-  }
+  return newArray;
 };
 
 export const swipeDown = (data, noOptionsToSwipe) => {
@@ -132,11 +124,7 @@ export const swipeDown = (data, noOptionsToSwipe) => {
   if (JSON.stringify(newArray) !== JSON.stringify(oldArray)) {
     addNumber(newArray);
   }
-  if (noOptionsToSwipe) {
-    return newArray;
-  } else {
-    return newArray;
-  }
+  return newArray;
 };
 
 export const swipeLeft = (data, noOptionsToSwipe) => {
@@ -179,9 +167,5 @@ export const swipeLeft = (data, noOptionsToSwipe) => {
   if (JSON.stringify(newArray) !== JSON.stringify(oldArray)) {
     addNumber(newArray);
   }
-  if (noOptionsToSwipe) {
-    return newArray;
-  } else {
-    return newArray;
-  }
+  return newArray;
 };

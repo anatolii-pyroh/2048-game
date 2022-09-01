@@ -1,17 +1,21 @@
-import "./App.css";
 import { Box, Container } from "@mui/material";
+import "./App.css";
+// hooks, reducers
 import { useDispatch, useSelector } from "react-redux";
-import Grid from "./components/Grid";
 import { useEffect, useRef } from "react";
-import { initialize } from "./helpers/initialize";
-import { updateGrid, updateIsGameOver } from "./redux/reducers/gameDataSlice";
 import { useEvent } from "./hooks/useEvent";
+import { updateGrid, updateIsGameOver } from "./redux/reducers/gameDataSlice";
+// helpers
+import { initialize } from "./helpers/initialize";
 import { swipeUp, swipeDown, swipeLeft, swipeRight } from "./helpers/swipes";
 import { checkIsGameOver } from "./helpers/isGameOver";
+// components
+import Grid from "./components/Grid";
 import ResetButton from "./components/ResetButton";
 
 function App() {
   const data = useSelector((state) => state.gameData.grid);
+  let counter = 0;
   const gameOver = useSelector((state) => state.gameData.isGameOver);
   const executedRef = useRef(false);
   const dispatch = useDispatch();
@@ -63,8 +67,20 @@ function App() {
 
   return (
     <Container maxWidth='sm' className='App'>
-      <ResetButton />
+      <Box
+        sx={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+        }}
+      >
+        <h1>2048</h1>
+        <ResetButton />
+      </Box>
       <Grid />
+      <p>
+        <span>HOW TO PLAY:</span> use Arrow keys to swipe blocks{" "}
+      </p>
     </Container>
   );
 }

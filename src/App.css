@@ -6,5 +6,18 @@ body {
 
 .App {
   text-align: center;
-  margin-top: 15rem;
+  margin-top: 10rem;
+}
+
+.App h1 {
+  font-size: 2.5rem;
+}
+
+.App p {
+  margin-top: 1.5rem;
+  font-size: 1.3rem;
+}
+
+.App span {
+  font-weight: bold;
 }

@@ -1,5 +1,5 @@
-import { Box } from "@mui/material";
 import React from "react";
+import { Box } from "@mui/material";
 import { getColor } from "../helpers/getColor";
 
 const Block = ({ number }) => {
@@ -18,7 +18,7 @@ const Block = ({ number }) => {
     },
   };
   const { blockStyle } = style;
-  
+
   return (
     <Box
       sx={{
