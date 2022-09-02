@@ -5,13 +5,13 @@ import Block from "./Block";
 
 const Grid = () => {
   const data = useSelector((state) => state.gameData.grid);
-  
+
   return (
     <Box
       sx={{
         backgroundColor: "#AD9D8F",
         width: "100%",
-        maxWidth: "435px",
+        maxWidth: "440px",
         margin: "auto",
         padding: "0.4rem",
         borderRadius: "1rem",

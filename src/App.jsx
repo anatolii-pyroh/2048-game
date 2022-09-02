@@ -86,25 +86,24 @@ function App() {
     <Container maxWidth='sm' className='App'>
       <Box
         sx={{
+          maxWidth: "435px",
           display: "flex",
-          justifyContent: "center",
+          flexDirection: "column",
           alignItems: "center",
           borderRadius: "10px",
+          margin: "auto",
+          marginBottom: "1rem",
+          fontSize: "1.5rem",
+          fontWeight: "bold",
         }}
       >
-        <h1>2048</h1>
-        <Box
-          sx={{
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "center",
-            fontWeight: "bold",
-            fontSize: "1.5rem",
-            paddingBottom: "1rem",
-          }}
-        >
+        <Box sx={{ display: "flex", alignItems: "center" }}>
+          <h1>2048</h1>
           <ResetButton />
-          Score: {score} Best score: {bestScore}
+        </Box>
+        <Box className="scores">
+          <span>Score: {score}</span>{" "}
+          <span>Best: {bestScore}</span>
         </Box>
       </Box>
       <Grid />

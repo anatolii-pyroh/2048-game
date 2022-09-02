@@ -2,7 +2,11 @@ import React from "react";
 import { Button } from "@mui/material";
 import { useDispatch } from "react-redux";
 import { reset } from "../helpers/reset";
-import { updateGrid, updateScore, updateIsGameOver, resetScore } from "../redux/reducers/gameDataSlice";
+import {
+  updateGrid,
+  updateIsGameOver,
+  resetScore,
+} from "../redux/reducers/gameDataSlice";
 
 const ResetButton = () => {
   const dispatch = useDispatch();
@@ -10,7 +14,7 @@ const ResetButton = () => {
   const resetGrid = () => {
     dispatch(updateGrid(reset()));
     dispatch(updateIsGameOver(false));
-    dispatch(resetScore())
+    dispatch(resetScore());
   };
 
   return (
@@ -21,13 +25,14 @@ const ResetButton = () => {
         background: "#846f5b",
         color: "#f8f5f0",
         width: "8rem",
-        margin: "1rem",
+        margin: "1rem 0",
         borderRadius: "0.5rem",
         fontWeight: "bold",
+        fontSize: "1rem",
+        alignSelf: "flex-end",
         "&:hover": {
           background: "#9e8976",
         },
-        fontSize: "1rem",
       }}
     >
       New Game
