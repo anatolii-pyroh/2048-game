@@ -5,6 +5,7 @@ export const swipeUp = (data) => {
   // console.log("swipe up");
   let oldArray = JSON.parse(JSON.stringify(data));
   let newArray = cloneDeep(data);
+  let newScore = 0;
 
   for (let i = 0; i < 4; i++) {
     let slow = 0;
@@ -27,6 +28,7 @@ export const swipeUp = (data) => {
         if (newArray[slow][i] === newArray[fast][i]) {
           newArray[slow][i] = newArray[slow][i] + newArray[fast][i];
           newArray[fast][i] = 0;
+          newScore += newArray[slow][i];
           fast = slow + 1;
           slow++;
         } else {
@@ -39,13 +41,14 @@ export const swipeUp = (data) => {
   if (JSON.stringify(newArray) !== JSON.stringify(oldArray)) {
     addNumber(newArray);
   }
-  return newArray;
+  return { newArray, newScore };
 };
 
 export const swipeRight = (data) => {
   // console.log("swipe right");
   let oldArray = data;
   let newArray = cloneDeep(data);
+  let newScore = 0;
 
   for (let i = 3; i >= 0; i--) {
     let b = newArray[i];
@@ -69,6 +72,7 @@ export const swipeRight = (data) => {
         if (b[slow] === b[fast]) {
           b[slow] = b[slow] + b[fast];
           b[fast] = 0;
+          newScore += b[slow];
           fast = slow - 1;
           slow--;
         } else {
@@ -82,13 +86,14 @@ export const swipeRight = (data) => {
   if (JSON.stringify(newArray) !== JSON.stringify(oldArray)) {
     addNumber(newArray);
   }
-  return newArray;
+  return { newArray, newScore };
 };
 
 export const swipeDown = (data) => {
   // console.log("swipe down");
   let oldArray = JSON.parse(JSON.stringify(data));
   let newArray = cloneDeep(data);
+  let newScore = 0;
 
   for (let i = 3; i >= 0; i--) {
     let slow = newArray.length - 1;
@@ -111,6 +116,7 @@ export const swipeDown = (data) => {
         if (newArray[slow][i] === newArray[fast][i]) {
           newArray[slow][i] = newArray[slow][i] + newArray[fast][i];
           newArray[fast][i] = 0;
+          newScore += newArray[slow][i];
           fast = slow - 1;
           slow--;
         } else {
@@ -124,13 +130,14 @@ export const swipeDown = (data) => {
   if (JSON.stringify(newArray) !== JSON.stringify(oldArray)) {
     addNumber(newArray);
   }
-  return newArray;
+  return { newArray, newScore };
 };
 
 export const swipeLeft = (data) => {
   // console.log("swipe left");
   let oldArray = data;
   let newArray = cloneDeep(data);
+  let newScore = 0;
 
   for (let i = 0; i < 4; i++) {
     let b = newArray[i];
@@ -153,6 +160,7 @@ export const swipeLeft = (data) => {
       } else if (b[slow] !== 0 && b[fast] !== 0) {
         if (b[slow] === b[fast]) {
           b[slow] = b[slow] + b[fast];
+          newScore += b[slow];
           b[fast] = 0;
           fast = slow + 1;
           slow++;
@@ -167,5 +175,5 @@ export const swipeLeft = (data) => {
   if (JSON.stringify(newArray) !== JSON.stringify(oldArray)) {
     addNumber(newArray);
   }
-  return newArray;
+  return { newArray, newScore };
 };

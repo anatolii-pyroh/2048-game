@@ -2,9 +2,13 @@ import { Box, Container } from "@mui/material";
 import "./App.css";
 // hooks, reducers
 import { useDispatch, useSelector } from "react-redux";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useEvent } from "./hooks/useEvent";
-import { updateGrid, updateIsGameOver } from "./redux/reducers/gameDataSlice";
+import {
+  updateGrid,
+  updateIsGameOver,
+  updateScore,
+} from "./redux/reducers/gameDataSlice";
 // helpers
 import { initialize } from "./helpers/initialize";
 import { swipeUp, swipeDown, swipeLeft, swipeRight } from "./helpers/swipes";
@@ -15,7 +19,7 @@ import ResetButton from "./components/ResetButton";
 
 function App() {
   const data = useSelector((state) => state.gameData.grid);
-  let counter = 0;
+  const score = useSelector((state) => state.gameData.score);
   const gameOver = useSelector((state) => state.gameData.isGameOver);
   const executedRef = useRef(false);
   const dispatch = useDispatch();
@@ -30,16 +34,20 @@ function App() {
     }
     switch (event.keyCode) {
       case UP_ARROW:
-        dispatch(updateGrid(swipeUp(data)));
+        dispatch(updateGrid(swipeUp(data).newArray));
+        dispatch(updateScore(swipeUp(data).newScore));
         break;
       case DOWN_ARROW:
-        dispatch(updateGrid(swipeDown(data)));
+        dispatch(updateGrid(swipeDown(data).newArray));
+        dispatch(updateScore(swipeDown(data).newScore));
         break;
       case LEFT_ARROW:
-        dispatch(updateGrid(swipeLeft(data)));
+        dispatch(updateGrid(swipeLeft(data).newArray));
+        dispatch(updateScore(swipeLeft(data).newScore));
         break;
       case RIGHT_ARROW:
-        dispatch(updateGrid(swipeRight(data)));
+        dispatch(updateGrid(swipeRight(data).newArray));
+        dispatch(updateScore(swipeRight(data).newScore));
         break;
       default:
         break;
@@ -78,7 +86,7 @@ function App() {
         <h1>2048</h1>
         <Box>
           <ResetButton />
-          Score:
+          Score: {score}
         </Box>
       </Box>
       <Grid />
