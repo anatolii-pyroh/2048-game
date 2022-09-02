@@ -1,12 +1,12 @@
 import React from "react";
 import { Button } from "@mui/material";
 import { useDispatch } from "react-redux";
-import { reset } from "../helpers/reset";
+import { reset } from "../../helpers/reset";
 import {
   updateGrid,
   updateIsGameOver,
   resetScore,
-} from "../redux/reducers/gameDataSlice";
+} from "../../redux/reducers/gameDataSlice";
 
 const ResetButton = () => {
   const dispatch = useDispatch();
@@ -25,7 +25,7 @@ const ResetButton = () => {
         background: "#846f5b",
         color: "#f8f5f0",
         width: "8rem",
-        margin: "1rem 0",
+        margin: "2rem 0",
         borderRadius: "0.5rem",
         fontWeight: "bold",
         fontSize: "1rem",

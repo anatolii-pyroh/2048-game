@@ -1,7 +1,7 @@
 import React from "react";
 import { Box } from "@mui/material";
 import { useSelector } from "react-redux";
-import Block from "./Block";
+import Block from "../Block/Block";
 
 const Grid = () => {
   const data = useSelector((state) => state.gameData.grid);
@@ -9,7 +9,7 @@ const Grid = () => {
   return (
     <Box
       sx={{
-        backgroundColor: "#AD9D8F",
+        backgroundColor: "#ad9d8f",
         width: "100%",
         maxWidth: "440px",
         margin: "auto",
@@ -24,6 +24,7 @@ const Grid = () => {
           ))}
         </Box>
       ))}
+
     </Box>
   );
 };

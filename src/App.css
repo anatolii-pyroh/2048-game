@@ -10,7 +10,7 @@ body {
 
 .App {
   text-align: center;
-  margin-top: 8rem;
+  margin-top: 7rem;
 }
 
 .App h1 {
@@ -21,7 +21,7 @@ body {
 
 .App p {
   margin-top: 1.5rem;
-  font-size: 1.2rem;
+  font-size: 1.3rem;
 }
 
 .App span {
@@ -29,9 +29,9 @@ body {
 }
 
 .scores span {
-  background: #bbada0;
+  background: #ad9d8f;
   color: white;
-  padding: 0.5rem;
-  font-size: 1.4rem;
+  padding: 0.6rem;
+  font-size: 1.5rem;
   border-radius: 0.5rem;
 }

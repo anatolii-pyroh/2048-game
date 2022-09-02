@@ -1,6 +1,6 @@
 import React from "react";
 import { Box } from "@mui/material";
-import { getColor } from "../helpers/getColor";
+import { getColor } from "../../helpers/getColor";
 
 const Block = ({ number }) => {
   const style = {

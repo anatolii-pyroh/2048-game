@@ -14,8 +14,8 @@ import { initialize } from "./helpers/initialize";
 import { swipeUp, swipeDown, swipeLeft, swipeRight } from "./helpers/swipes";
 import { checkIsGameOver } from "./helpers/isGameOver";
 // components
-import Grid from "./components/Grid";
-import ResetButton from "./components/ResetButton";
+import Grid from "./components/Grid/Grid";
+import TopContent from "./components/TopContent/TopContent";
 
 function App() {
   const data = useSelector((state) => state.gameData.grid);
@@ -84,28 +84,7 @@ function App() {
 
   return (
     <Container maxWidth='sm' className='App'>
-      <Box
-        sx={{
-          maxWidth: "435px",
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
-          borderRadius: "10px",
-          margin: "auto",
-          marginBottom: "1rem",
-          fontSize: "1.5rem",
-          fontWeight: "bold",
-        }}
-      >
-        <Box sx={{ display: "flex", alignItems: "center" }}>
-          <h1>2048</h1>
-          <ResetButton />
-        </Box>
-        <Box className="scores">
-          <span>Score: {score}</span>{" "}
-          <span>Best: {bestScore}</span>
-        </Box>
-      </Box>
+      <TopContent score={score} bestScore={bestScore} />
       <Grid />
       <p>
         <span>HOW TO PLAY:</span> use Arrow keys to swipe blocks
