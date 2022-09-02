@@ -20,7 +20,9 @@ import ResetButton from "./components/ResetButton";
 function App() {
   const data = useSelector((state) => state.gameData.grid);
   const score = useSelector((state) => state.gameData.score);
+  const [bestScore, setBestScore] = useState(score);
   const gameOver = useSelector((state) => state.gameData.isGameOver);
+
   const executedRef = useRef(false);
   const dispatch = useDispatch();
 
@@ -61,6 +63,13 @@ function App() {
     }
   };
 
+  useEffect(() => {
+    if (bestScore > score) {
+      return;
+    }
+    setBestScore(score);
+  }, [score]);
+
   // fix double useEffect call and initialize 2 numbers for 2 random blocks
   useEffect(() => {
     if (executedRef.current) {
@@ -79,19 +88,28 @@ function App() {
         sx={{
           display: "flex",
           justifyContent: "center",
-          flexDirection: "column",
           alignItems: "center",
+          borderRadius: "10px",
         }}
       >
         <h1>2048</h1>
-        <Box>
+        <Box
+          sx={{
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            fontWeight: "bold",
+            fontSize: "1.5rem",
+            paddingBottom: "1rem",
+          }}
+        >
           <ResetButton />
-          Score: {score}
+          Score: {score} Best score: {bestScore}
         </Box>
       </Box>
       <Grid />
       <p>
-        <span>HOW TO PLAY:</span> use Arrow keys to swipe blocks{" "}
+        <span>HOW TO PLAY:</span> use Arrow keys to swipe blocks
       </p>
     </Container>
   );

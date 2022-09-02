@@ -10,7 +10,8 @@ const Grid = () => {
     <Box
       sx={{
         backgroundColor: "#AD9D8F",
-        width: "max-content",
+        width: "100%",
+        maxWidth: "435px",
         margin: "auto",
         padding: "0.4rem",
         borderRadius: "1rem",
