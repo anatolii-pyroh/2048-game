@@ -1,7 +1,7 @@
 import { Box } from "@mui/material";
 import React from "react";
 import ResetButton from "../ResetButton/ResetButton";
-
+import classes from "./TopContent.module.css";
 const TopContent = ({ score, bestScore }) => {
   return (
     <Box
@@ -21,7 +21,7 @@ const TopContent = ({ score, bestScore }) => {
         <h1>2048</h1>
         <ResetButton />
       </Box>
-      <Box className='scores'>
+      <Box className={classes.scores}>
         <span>Score: {score}</span> <span>Best: {bestScore}</span>
       </Box>
     </Box>

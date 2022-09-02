@@ -1,12 +1,11 @@
 import { useEffect } from "react";
 
-// hook for adding and cleaning up event linstener on arrow key press
+// add event linstener on arrow key press and clean it after
 export const useEvent = (event, handler, passive = false) => {
   useEffect(() => {
-    // initiate the event handler
     window.addEventListener(event, handler, passive);
-
-    // clean up the event every time the component is re-rendered
+    
+    // clean up at re-render
     return function cleanUp() {
       window.removeEventListener(event, handler);
     };
