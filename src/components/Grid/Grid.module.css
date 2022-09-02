@@ -1,0 +1,17 @@
+.modal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  max-width: 440px;
+  height: 445px;
+  transform: translate(-50%, -50%);
+  background-color: rgba(238, 228, 218, 0.5);
+  border-radius: 1rem;
+  font-size: 4rem;
+  font-weight: bold;
+  transition: 1s;
+}

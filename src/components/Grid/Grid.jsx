@@ -2,13 +2,14 @@ import React from "react";
 import { Box } from "@mui/material";
 import { useSelector } from "react-redux";
 import Block from "../Block/Block";
-
+import classes from "./Grid.module.css";
 const Grid = () => {
   const data = useSelector((state) => state.gameData.grid);
-
+  const gameOver = useSelector((state) => state.gameData.isGameOver);
   return (
     <Box
       sx={{
+        position: "relative",
         backgroundColor: "#ad9d8f",
         width: "100%",
         maxWidth: "440px",
@@ -24,7 +25,15 @@ const Grid = () => {
           ))}
         </Box>
       ))}
-
+      <Box
+        className={classes.modal}
+        sx={{
+          visibility: gameOver ? "visible" : "hidden",
+          opacity: gameOver ? 1 : 0,
+        }}
+      >
+        Game over!
+      </Box>
     </Box>
   );
 };
