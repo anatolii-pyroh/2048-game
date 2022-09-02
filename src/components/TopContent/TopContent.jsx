@@ -7,15 +7,18 @@ import classes from "./TopContent.module.css";
 
 const TopContent = () => {
   const score = useSelector((state) => state.gameData.score);
-  const [bestScore, setBestScore] = useState(score);
+  const [bestScore, setBestScore] = useState(localStorage.getItem("bestScore"));
 
-  
   useEffect(() => {
     if (bestScore > score) {
       return;
     }
     setBestScore(score);
   }, [score]);
+
+  useEffect(() => {
+    localStorage.setItem("bestScore", bestScore);
+  }, [bestScore]);
 
   return (
     <Box
