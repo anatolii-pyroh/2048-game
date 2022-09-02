@@ -1,19 +1,19 @@
 import { Box, Container } from "@mui/material";
 import "./App.css";
-// hooks, reducers
+
 import { useDispatch, useSelector } from "react-redux";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 import { useEvent } from "./hooks/useEvent";
 import {
   updateGrid,
   updateIsGameOver,
   updateScore,
 } from "./redux/reducers/gameDataSlice";
-// helpers
+
 import { initialize } from "./helpers/initialize";
 import { swipeUp, swipeDown, swipeLeft, swipeRight } from "./helpers/swipes";
 import { checkIsGameOver } from "./helpers/isGameOver";
-// components
+
 import Grid from "./components/Grid/Grid";
 import TopContent from "./components/TopContent/TopContent";
 
