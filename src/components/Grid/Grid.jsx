@@ -1,8 +1,11 @@
 import React from "react";
+
 import { Box } from "@mui/material";
 import { useSelector } from "react-redux";
 import Block from "../Block/Block";
+
 import classes from "./Grid.module.css";
+
 const Grid = () => {
   const data = useSelector((state) => state.gameData.grid);
   const gameOver = useSelector((state) => state.gameData.isGameOver);

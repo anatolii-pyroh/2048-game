@@ -1,8 +1,22 @@
 import { Box } from "@mui/material";
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { useSelector } from "react-redux";
 import ResetButton from "../ResetButton/ResetButton";
+
 import classes from "./TopContent.module.css";
-const TopContent = ({ score, bestScore }) => {
+
+const TopContent = () => {
+  const score = useSelector((state) => state.gameData.score);
+  const [bestScore, setBestScore] = useState(score);
+
+  
+  useEffect(() => {
+    if (bestScore > score) {
+      return;
+    }
+    setBestScore(score);
+  }, [score]);
+
   return (
     <Box
       sx={{

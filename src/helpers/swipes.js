@@ -1,6 +1,9 @@
 import cloneDeep from "lodash.clonedeep";
 import { addNumber } from "./addNumber";
 
+// swipes returns object with newArray
+// and a score that 0 or new value added to grid (2/4/8/16/..etc)
+
 export const swipeUp = (data) => {
   // console.log("swipe up");
   let oldArray = JSON.parse(JSON.stringify(data));

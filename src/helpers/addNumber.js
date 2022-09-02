@@ -1,5 +1,4 @@
 export const addNumber = (newArray) => {
-  // is a 2 or 4 number added to any block
   let added = false;
   let arrayFull = false;
 

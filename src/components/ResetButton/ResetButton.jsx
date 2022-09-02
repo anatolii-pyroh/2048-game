@@ -1,12 +1,14 @@
 import React from "react";
 import { Button } from "@mui/material";
+
 import { useDispatch } from "react-redux";
-import { reset } from "../../helpers/reset";
 import {
   updateGrid,
   updateIsGameOver,
   resetScore,
 } from "../../redux/reducers/gameDataSlice";
+
+import { reset } from "../../helpers/reset";
 
 const ResetButton = () => {
   const dispatch = useDispatch();

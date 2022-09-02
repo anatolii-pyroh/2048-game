@@ -19,8 +19,6 @@ import TopContent from "./components/TopContent/TopContent";
 
 function App() {
   const data = useSelector((state) => state.gameData.grid);
-  const score = useSelector((state) => state.gameData.score);
-  const [bestScore, setBestScore] = useState(score);
   const gameOver = useSelector((state) => state.gameData.isGameOver);
 
   const executedRef = useRef(false);
@@ -58,20 +56,14 @@ function App() {
     // check if possible to continue swiping
     // if not, set gameOver to true
     let gameOverr = checkIsGameOver(data);
+    // false if possible to continue, true if game is over
     console.log(checkIsGameOver(data));
     if (gameOverr) {
       dispatch(updateIsGameOver(true));
     }
   };
 
-  useEffect(() => {
-    if (bestScore > score) {
-      return;
-    }
-    setBestScore(score);
-  }, [score]);
-
-  // fix double useEffect call and initialize 2 numbers for 2 random blocks
+  // initialize 2 numbers for 2 random blocks
   useEffect(() => {
     if (executedRef.current) {
       return;
@@ -85,7 +77,7 @@ function App() {
 
   return (
     <Container maxWidth='sm' className='App'>
-      <TopContent score={score} bestScore={bestScore} />
+      <TopContent />
       <Grid />
       <p>
         <span>HOW TO PLAY:</span> use Arrow keys to swipe blocks
